@@ -441,7 +441,6 @@ void XRay::CFontGen::CreateGSCFonts()
 
 void XRay::CFontGen::InitFont()
 {
-#ifdef DEBUG
 	SetConsoleTextAttribute(hConsole, DEFAULT_COLOR);
 	ConverterInfo.Pixels = nullptr;
 
@@ -459,7 +458,6 @@ void XRay::CFontGen::InitFont()
 		std::cout << "Failed!" << std::endl;
 		SetConsoleTextAttribute(hConsole, DEFAULT_COLOR);
 	}
-#endif
 }
 
 void XRay::CFontGen::CreateFolder()
