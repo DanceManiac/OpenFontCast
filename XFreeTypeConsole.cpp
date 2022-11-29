@@ -447,7 +447,7 @@ void XRay::CFontGen::CreateGSCFonts()
 	{
 		for(u32 Iter = 0; Iter < 5; Iter++)
 			// Каждый последующий размер уменьшается с шагом *2 (то есть -2, -4)
-			ParseFont(PathSystem.FontSize - (Iter * 2), PathSystem.FontSize); 
+			ParseFont((b4k ? 4 : 0) + PathSystem.FontSize - (Iter * 2), PathSystem.FontSize);
 	}
 }
 

@@ -31,6 +31,7 @@ namespace XFontForm {
 	private: System::Windows::Forms::GroupBox^  groupBox2;
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::TextBox^ TestText;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 
 
 
@@ -80,6 +81,7 @@ namespace XFontForm {
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->TestText = (gcnew System::Windows::Forms::TextBox());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TexFontBox))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -93,7 +95,7 @@ namespace XFontForm {
 			this->TexFontBox->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->TexFontBox->ImageLocation = L"";
 			this->TexFontBox->Location = System::Drawing::Point(491, 76);
-			this->TexFontBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TexFontBox->Margin = System::Windows::Forms::Padding(4);
 			this->TexFontBox->Name = L"TexFontBox";
 			this->TexFontBox->Size = System::Drawing::Size(317, 70);
 			this->TexFontBox->TabIndex = 0;
@@ -117,7 +119,7 @@ namespace XFontForm {
 			// InputBox
 			// 
 			this->InputBox->Location = System::Drawing::Point(48, 80);
-			this->InputBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->InputBox->Margin = System::Windows::Forms::Padding(4);
 			this->InputBox->Name = L"InputBox";
 			this->InputBox->Size = System::Drawing::Size(337, 22);
 			this->InputBox->TabIndex = 2;
@@ -125,7 +127,7 @@ namespace XFontForm {
 			// OutputBox
 			// 
 			this->OutputBox->Location = System::Drawing::Point(48, 123);
-			this->OutputBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->OutputBox->Margin = System::Windows::Forms::Padding(4);
 			this->OutputBox->Name = L"OutputBox";
 			this->OutputBox->Size = System::Drawing::Size(337, 22);
 			this->OutputBox->TabIndex = 3;
@@ -159,7 +161,7 @@ namespace XFontForm {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(395, 80);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(72, 25);
 			this->button1->TabIndex = 6;
@@ -170,7 +172,7 @@ namespace XFontForm {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(395, 123);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(72, 25);
 			this->button2->TabIndex = 7;
@@ -181,7 +183,7 @@ namespace XFontForm {
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(352, 176);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(115, 28);
 			this->button3->TabIndex = 8;
@@ -205,7 +207,7 @@ namespace XFontForm {
 			// numericUpDown1
 			// 
 			this->numericUpDown1->Location = System::Drawing::Point(101, 162);
-			this->numericUpDown1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 32, 0, 0, 0 });
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
@@ -220,9 +222,9 @@ namespace XFontForm {
 			this->groupBox1->Controls->Add(this->label5);
 			this->groupBox1->Controls->Add(this->Exit);
 			this->groupBox1->Location = System::Drawing::Point(424, -17);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(49, 46);
 			this->groupBox1->TabIndex = 11;
 			this->groupBox1->TabStop = false;
@@ -262,9 +264,9 @@ namespace XFontForm {
 			// 
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Location = System::Drawing::Point(-8, -17);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox2->Size = System::Drawing::Size(140, 41);
 			this->groupBox2->TabIndex = 12;
 			this->groupBox2->TabStop = false;
@@ -283,12 +285,25 @@ namespace XFontForm {
 			// TestText
 			// 
 			this->TestText->Location = System::Drawing::Point(491, 144);
-			this->TestText->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TestText->Margin = System::Windows::Forms::Padding(4);
 			this->TestText->Name = L"TestText";
 			this->TestText->Size = System::Drawing::Size(319, 22);
 			this->TestText->TabIndex = 13;
 			this->TestText->Text = L"Make me XFont";
 			this->TestText->TextChanged += gcnew System::EventHandler(this, &MeshEdit::TestText_TextChanged);
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->checkBox1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->checkBox1->Location = System::Drawing::Point(5, 187);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(148, 24);
+			this->checkBox1->TabIndex = 14;
+			this->checkBox1->Text = L"2k and 4k mode";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MeshEdit::checkBox1_CheckedChanged);
 			// 
 			// MeshEdit
 			// 
@@ -298,6 +313,7 @@ namespace XFontForm {
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->ClientSize = System::Drawing::Size(477, 219);
 			this->ControlBox = false;
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->TestText);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
@@ -314,7 +330,7 @@ namespace XFontForm {
 			this->Controls->Add(this->TexFontBox);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"MeshEdit";
@@ -359,5 +375,6 @@ private: System::Void MeshEdit_Load(System::Object^  sender, System::EventArgs^ 
 private: System::Void TestText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	MakeDraftBox();
 }
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }

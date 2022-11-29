@@ -73,6 +73,7 @@ namespace XRay
 		static bool bSucFile;
 		static bool bSucDir;
 		PathList PathSystem;
+		bool b4k = false;
 
 	public:
 		CFontGen();
