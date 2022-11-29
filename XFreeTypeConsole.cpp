@@ -263,20 +263,20 @@ void XRay::CFontGen::ParseFont(int index, int max_value)
 			case 1:
 			{
 				PathSystem.FileOutName += std::to_string(ConverterInfo.FontHeig);
-				PathSystem.FileOutName += "_" + std::to_string(3840);
+				PathSystem.FileOutName += "_" + std::to_string(b4k ? 3840 : 1600);
 				max_height_font = ConverterInfo.FontHeig;
 			} break;
 
 			case 2:
 			{
 				PathSystem.FileOutName += std::to_string(max_height_font);
-				PathSystem.FileOutName += "_" + std::to_string(2560);
+				PathSystem.FileOutName += "_" + std::to_string(b4k ? 2560 : 1024);
 			} break;
 
 			case 3:
 			{
 				PathSystem.FileOutName += std::to_string(max_height_font);
-				PathSystem.FileOutName += "_" + std::to_string(1600);
+				PathSystem.FileOutName += "_" + std::to_string(b4k ? 1600 : 800);
 			} break;
 
 			case 4:
@@ -445,7 +445,7 @@ void XRay::CFontGen::CreateGSCFonts()
 {
 	if (PathSystem.FontSize)
 	{
-		for(u32 Iter = 0; Iter < 5; Iter++)
+		for(u32 Iter = 0; Iter < ((b4k ? 2 : 0) + 3); Iter++)
 			// Каждый последующий размер уменьшается с шагом *2 (то есть -2, -4)
 			ParseFont((b4k ? 4 : 0) + PathSystem.FontSize - (Iter * 2), PathSystem.FontSize);
 	}
