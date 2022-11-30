@@ -2,6 +2,7 @@
 #include "MainForm.h"
 
 //#define gcdelete(arg) arg->~
+static bool b4kMode = false;
 
 [System::STAThreadAttribute]
 int main()
@@ -54,6 +55,11 @@ System::Void XFontForm::MeshEdit::button1_Click(System::Object^ sender, System::
 	}
 }
 
+System::Void XFontForm::MeshEdit::checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	b4kMode = checkBox1->Checked;
+}
+
 System::Void XFontForm::MeshEdit::button3_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
 	string128 InPathNameStr = { 0 };
@@ -69,15 +75,16 @@ System::Void XFontForm::MeshEdit::button3_Click(System::Object ^ sender, System:
 	FrontSystem.PathSystem.PathOutName += "\\";
 	FrontSystem.PathSystem.FontSize = (unsigned int)this->numericUpDown1->Value;
 
+	FrontSystem.b4k = b4kMode;
 	FrontSystem.ManageCreationFile();
 
-	// @ Если успешно загружен файл
+	// @ Р•СЃР»Рё СѓСЃРїРµС€РЅРѕ Р·Р°РіСЂСѓР¶РµРЅ С„Р°Р№Р»
 	if (XRay::CFontGen::bSucFile)
 	{
 		FrontSystem.CreateFolder();
 		FrontSystem.CheckTexConv();
 
-		// @ Если успешно создана папка
+		// @ Р•СЃР»Рё СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅР° РїР°РїРєР°
 		if (XRay::CFontGen::bSucDir)
 			FrontSystem.InitFont();
 	}
@@ -85,7 +92,7 @@ System::Void XFontForm::MeshEdit::button3_Click(System::Object ^ sender, System:
 	System::String^ ImgPath = gcnew System::String((
 		FrontSystem.PathSystem.PathOutName + 
 		FrontSystem.PathSystem.FileName +  "_" +
-		std::to_string(FrontSystem.PathSystem.FontSize).c_str() + "_1600.png"
+		std::to_string(FrontSystem.PathSystem.FontSize).c_str() + "_3840.png"
 		).c_str());
 
 	
